@@ -4,7 +4,7 @@ Ext.define('C.view.main.MainController', {
 
     onGridRowSelect: function(sender, record) {
         var me = this;
-        me.setActiveEastCard(1);
+        me.windowShow(1);
         me.getViewModel().set('currentEntry', record);
     },
 
@@ -20,8 +20,7 @@ Ext.define('C.view.main.MainController', {
             });
         vm.set('currentEntry', record);
         store.insert(0, record);
-        me.getView().down('maingrid').getView().select(0)
-        me.setActiveEastCard(1);
+        me.windowShow(0);
         me.gridAddBtnSetDisabled(true);
     },
 
@@ -39,6 +38,7 @@ Ext.define('C.view.main.MainController', {
             store = vm.getStore('entries'),
             entry = vm.get('currentEntry');
         if (btn.action === 'save') {
+            console.log(me.getView());
             if (me.getView().down('mainform').isValid()) {
                 store.commitChanges();
             } else {
@@ -47,16 +47,22 @@ Ext.define('C.view.main.MainController', {
         } else {
             store.rejectChanges();
         }
-        me.getView().down('maingrid').setSelection();
-        me.setActiveEastCard(0);
+        me.windowHide();
         me.gridAddBtnSetDisabled(false);
     },
 
-    setActiveEastCard: function(n) {
+    windowShow: function(n) {
         var me = this,
-            cards = me.getView().down('container[region=east]');
-        cards.setActiveItem(n);
+            w = me.getView().down('window');
+        w.show(n);
     },
+
+    windowHide: function(n) {
+        var me = this,
+            w = me.getView().down('window');
+        w.hide(n);
+    },
+
     gridAddBtnSetDisabled: function (disabled) {
         var me = this,
             btn = me.getView().down('button[action=add]');

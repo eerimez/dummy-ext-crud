@@ -10,37 +10,33 @@ Ext.define('C.view.main.Main', {
         'C.view.main.MainModel',
         'C.view.main.MainController'
     ],
-    layout: 'border',
     controller: 'main',
     viewModel: 'main',
-    items: [{
-        region: 'north',
+    layout: 'fit',
+    items: [
+        {
+            xtype: 'window',bind: {
+                title: '{formTitle}'
+            },
+            title:'{formTitle}',
+            items: [{
+                xtype: 'mainform'
+            }]
+        },
+        {
         xtype: 'container',
-        cls: 'app-header',
-        height: 50,
-        bind: '{name}'
-    }, {
-        region: 'center',
-        xtype: 'maingrid',
-        margin: '5 0 5 5'
-    }, {
-        region: 'east',
-        xtype: 'container',
-        layout: 'card',
-        margin: '5 5 5 0',
-        split: true,
-        width: '30%',
-        activeItem: 0,
+        layout: 'border',
         items: [{
-            xtype: 'panel',
-            title: 'Info',
-            cls: 'info-panel',
-            bodyPadding: 10,
-            bind: {
-                html: '{infoText}'
-            }
+            region: 'north',
+            xtype: 'container',
+            cls: 'app-header',
+            height: 50,
+            bind: '{name}'
         }, {
-            xtype: 'mainform'
+            region: 'center',
+            xtype: 'maingrid',
+            margin: '5 0 5 5'
         }]
-    }]
+    }
+    ]
 });

@@ -11,7 +11,7 @@ Ext.define('C.view.main.Form', {
         currentEntry: null
     },
     bind:{
-        title:'{formTitle}',
+        //title:'{formTitle}',
         currentEntry:'{currentEntry}'
     },
     defaults: {
