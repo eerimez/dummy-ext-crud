@@ -15,10 +15,10 @@ Ext.define('C.view.main.Main', {
     layout: 'fit',
     items: [
         {
-            xtype: 'window',bind: {
+            xtype: 'window',
+            bind: {
                 title: '{formTitle}'
             },
-            title:'{formTitle}',
             items: [{
                 xtype: 'mainform'
             }]

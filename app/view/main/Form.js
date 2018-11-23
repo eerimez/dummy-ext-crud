@@ -27,10 +27,11 @@ Ext.define('C.view.main.Form', {
             value: '{currentEntry.id}'
         }
     }, {
-        fieldLabel: 'Name',
+        //fieldLabel: 'Name',
         name: 'name',
         xtype: 'textfield',
         bind: {
+            fieldLabel: '{fields.name.fieldLabel}',
             value: '{currentEntry.name}'
         }
     }, {
@@ -38,6 +39,7 @@ Ext.define('C.view.main.Form', {
         name: 'title',
         xtype: 'textfield',
         bind: {
+            fieldLabel: '{fields.title.fieldLabel}',
             value: '{currentEntry.title}'
         }
     }, {

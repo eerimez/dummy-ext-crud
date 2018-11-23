@@ -6,6 +6,14 @@ Ext.define('C.view.main.MainModel', {
     ],
 
     data: {
+        fields: {
+            name: {
+                fieldLabel:'The Name:'
+            },
+            title: {
+                fieldLabel:'The Title:'
+            }
+        },
         name: 'Simple Dummy CRUD Demo',
         gridTitle: 'Entry Grid',
         formTitle: 'Entry Form',
