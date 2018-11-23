@@ -17,7 +17,7 @@ Ext.define('C.view.main.Main', {
         {
             xtype: 'window',
             bind: {
-                title: '{formTitle}'
+                title: '{form.formTitle}'
             },
             items: [{
                 xtype: 'mainform'

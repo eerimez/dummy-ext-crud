@@ -6,6 +6,9 @@ Ext.define('C.view.main.MainModel', {
     ],
 
     data: {
+        form: {
+            formTitle: 'Entry Form',
+        },
         fields: {
             name: {
                 fieldLabel:'The Name:'
@@ -16,10 +19,11 @@ Ext.define('C.view.main.MainModel', {
         },
         name: 'Simple Dummy CRUD Demo',
         gridTitle: 'Entry Grid',
-        formTitle: 'Entry Form',
         infoTitle: 'Information',
+
         addBtnText: 'Add new entry',
         delBtnText: 'Delete entry',
+
         infoText: '<h2>Basic Information</h2>' +
             'The applications shows basic CRUD functionality on an Ext.Store with memory proxy. ' +
             'Store\'s data is hardcoded inside the viewModel.' +
