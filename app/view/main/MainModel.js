@@ -8,30 +8,34 @@ Ext.define('C.view.main.MainModel', {
     data: {
         form: {
             formTitle: 'Entry Form',
+            saveBtnText: 'Save it',
+            cancelBtnText: 'Cancel it'
+        },
+        grid: {
+            title: 'Entry Grid',
+            name: 'Simple Dummy CRUD Demo',
+
+            addBtnText: 'Add new entry',
+            delBtnText: 'Delete entry',
         },
         fields: {
+            id: {
+                fieldLabel:'ID:'
+            },
             name: {
                 fieldLabel:'The Name:'
             },
             title: {
                 fieldLabel:'The Title:'
+            },
+            description: {
+                fieldLabel:'The Description:'
+            },
+            date: {
+                fieldLabel:'The Date:'
             }
         },
-        name: 'Simple Dummy CRUD Demo',
-        gridTitle: 'Entry Grid',
-        infoTitle: 'Information',
 
-        addBtnText: 'Add new entry',
-        delBtnText: 'Delete entry',
-
-        infoText: '<h2>Basic Information</h2>' +
-            'The applications shows basic CRUD functionality on an Ext.Store with memory proxy. ' +
-            'Store\'s data is hardcoded inside the viewModel.' +
-            '<h2>Usage</h2>' +
-            'In order to edit a record, click on a grid row. ' +
-            'Then edit the record within the form. ' +
-            'If you press Cancel your changes will be lost.' +
-            'To add new record, click "Add new entry button" and do the same as with records to be updated.',
         currentEntry: null
     },
 

@@ -31,7 +31,7 @@ Ext.define('C.view.main.Main', {
             xtype: 'container',
             cls: 'app-header',
             height: 50,
-            bind: '{name}'
+            bind: '{grid.name}'
         }, {
             region: 'center',
             xtype: 'maingrid',

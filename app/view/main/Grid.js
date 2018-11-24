@@ -4,14 +4,14 @@ Ext.define('C.view.main.Grid', {
     publishes:['currentEntry'],
     bind: {
         store: '{entries}',
-        title: '{gridTitle}'
+        title: '{grid.title}'
     },
     dockedItems: [{
         xtype: 'toolbar',
         items: ['->', {
             xtype: 'button',
             action: 'add',
-            bind: '{addBtnText}',
+            bind: '{grid.addBtnText}',
             iconCls: 'fa-plus-circle',
             handler:  'onGridAddBtnClick'
         }]
@@ -23,7 +23,11 @@ Ext.define('C.view.main.Grid', {
         items: [{
             action: 'del',
             iconCls: 'fa-minus-circle',
-            handler: 'onGridDelBtnClick'
+            handler: 'onGridDelBtnClick',
+            tooltip: '{grid.delBtnText}',  //TODO: why is tooltip not working?
+            bind: {
+                tooltip: '{grid.delBtnText}'
+            }
         }]
     }, {
         text: 'Id',
