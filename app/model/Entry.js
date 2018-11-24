@@ -8,6 +8,14 @@ Ext.define('C.model.Entry', {
         type: 'sequential',
         seed: 4
     },
+    proxy: {
+    type: 'ajax',
+        url: '/resources/entries.json',
+        reader: {
+        type: 'json',
+            rootProperty: 'data'
+        }
+    },
     fields: [{
             name: 'id',
             type: 'int'
