@@ -9,7 +9,7 @@ Ext.define('C.model.Entry', {
         seed: 4
     },
     proxy: {
-    type: 'ajax',
+        type: 'ajax',
         url: '/resources/entries.json',
         reader: {
         type: 'json',

@@ -4,6 +4,7 @@ Ext.define('C.view.main.Main', {
 
     requires: [
         'Ext.plugin.Viewport',
+        'Ext.grid.*',
 
         'C.view.main.Grid',
         'C.view.main.Form',

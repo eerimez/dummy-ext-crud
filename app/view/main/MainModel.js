@@ -18,6 +18,29 @@ Ext.define('C.view.main.MainModel', {
             addBtnText: 'Add new entry',
             delBtnText: 'Delete entry',
         },
+        columns: {
+            id: {
+                text: 'Identifier',
+                width: 40
+            },
+            name: {
+                text: 'The Name',
+                width: 120,
+                editor: 'textfield'
+            },
+            description: {
+                text: 'The Desc',
+                width: 120,
+                flex: 1,
+                editor: 'textfield'
+            },
+            date: {
+                text: 'The Date',
+                width: 100,
+                format: 'Y-M-d',
+                editor: 'textfield'
+            }
+        },
         fields: {
             id: {
                 fieldLabel:'ID:'
