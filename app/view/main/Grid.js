@@ -2,7 +2,7 @@ Ext.define('FS2.grid.column.Date', {
     extend: 'Ext.grid.column.Date',
     alias: ['widget.datecolumn'],
     requires: ['Ext.Date'],
-    alternateClassName: 'Ext.grid.XDateColumn',
+    alternateClassName: 'FS2.grid.DateColumn',
 
     setFormat: function(x) {
         this.format = x;
