@@ -13,6 +13,21 @@ Ext.define('FS2.grid.column.Date', {
     }
 });
 
+Ext.define('FS2.grid.column.Action', {
+    extend: 'Ext.grid.column.Action',
+    alias: ['widget.xactioncolumn'],
+    alternateClassName: 'FS2.grid.ActionColumn',
+
+    setTooltip: function(x) {
+        this.tooltip = x;
+    },
+
+    getTooltip: function() {
+        return this.tooltip;
+    }
+
+});
+
 Ext.define('C.view.main.Grid', {
     extend: 'Ext.grid.Panel',
     xtype: 'maingrid',
@@ -37,9 +52,10 @@ Ext.define('C.view.main.Grid', {
     //     })
     // ],
     columns: [{
-        xtype: 'actioncolumn',
+        xtype: 'xactioncolumn',
         bind: {
-          width: '{columns.id.text}'
+          width: '{columns.id.text}',
+          tooltip: '{grid.delBtnText}'
         },
         width: 40,
         align: 'center',
@@ -47,7 +63,6 @@ Ext.define('C.view.main.Grid', {
             action: 'del',
             iconCls: 'fa-minus-circle',
             handler: 'onGridDelBtnClick',
-            tooltip: '{grid.delBtnText}',
             bind: {
                 tooltip: '{grid.delBtnText}' //TODO: why is tooltip not working?
             }
