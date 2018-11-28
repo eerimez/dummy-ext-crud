@@ -1,4 +1,4 @@
-Ext.define('C.view.crud.entry.Main', {
+Ext.define('C.view.crud.entry.Entry', {
     extend: 'Ext.Container',
     alias: 'widget.crud-entry',
     controller: 'crud-entry',

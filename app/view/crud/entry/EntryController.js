@@ -1,4 +1,4 @@
-Ext.define('C.view.crud.entry.MainController', {
+Ext.define('C.view.crud.entry.EntryController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.crud-entry',
 

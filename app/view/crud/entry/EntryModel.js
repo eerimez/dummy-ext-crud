@@ -1,4 +1,4 @@
-Ext.define('C.view.crud.entry.MainModel', {
+Ext.define('C.view.crud.entry.EntryModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.crud-entry',
     requires: [
