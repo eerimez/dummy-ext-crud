@@ -1,6 +1,6 @@
-Ext.define('C.view.main.Grid', {
+Ext.define('C.view.crud.entry.Grid', {
     extend: 'Ext.grid.Panel',
-    xtype: 'maingrid',
+    alias: 'widget.crud-entry-grid',
     publishes:['currentEntry'],
     bind: {
         store: '{entries}',
