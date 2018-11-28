@@ -1,6 +1,6 @@
-Ext.define('C.view.main.MainController', {
+Ext.define('C.view.crud.entry.EntryController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.main',
+    alias: 'controller.crud-entry',
 
     onGridRowSelect: function(sender, record) {
         var me = this;
