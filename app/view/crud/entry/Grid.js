@@ -16,67 +16,78 @@ Ext.define('C.view.crud.entry.Grid', {
             handler:  'onGridAddBtnClick'
         }]
     }],
+    plugins: 'gridfilters',
     // plugins: [
     //     Ext.create('Ext.grid.plugin.RowEditing', {
     //         clicksToEdit: 1
     //     })
     // ],
-    columns: [{
-        xtype: 'actioncolumn',
-        bind: {
-          width: '{columns.id.text}',
-        },
-        width: 40,
-        align: 'center',
+    columns: {
         items: [{
-            action: 'del',
-            iconCls: 'fa-minus-circle',
-            handler: 'onGridDelBtnClick',
-            getTip: function() {
-                return this.lookupViewModel().get('grid.delBtnText');
+            xtype: 'actioncolumn',
+            bind: {
+              width: '{columns.id.text}',
+            },
+            width: 40,
+            align: 'center',
+            items: [{
+                action: 'del',
+                iconCls: 'fa-minus-circle',
+                handler: 'onGridDelBtnClick',
+                getTip: function() {
+                    return this.lookupViewModel().get('grid.delBtnText');
+                }
+            }],
+            filter: null
+        }, {
+            dataIndex: 'id',
+            bind: {
+                text: '{columns.id.text}',
+                width: '{columns.id.width}'
+            },
+            filter: {
+                type: 'number'
             }
-        }]
-    }, {
-        dataIndex: 'id',
-        bind: {
-            text: '{columns.id.text}',
-            width: '{columns.id.width}'
-        },
-
-    }, {
-        dataIndex: 'name',
-        bind: {
-            text: '{columns.name.text}',
-            width: '{columns.name.width}',
-            // editor: '{columns.name.editor}',
-        },
-    }, {
-        dataIndex: 'title',
-        bind: {
-            text: '{columns.name.text}',
-            width: '{columns.name.width}',
-            // editor: '{columns.name.editor}',
-        },
-        //editor: 'textfield'
-    }, {
-        dataIndex: 'description',
-        bind: {
-            text: '{columns.description.text}',
-            width: '{columns.description.width}',
-            flex: '{columns.description.flex}'
-            // editor: '{columns.name.editor}',
-        },
-        // editor: 'textfield'
-    }, {
-        dataIndex: 'date',
-        xtype: 'datecolumn',
-        bind: {
-            text: '{columns.date.text}',
-            width: '{columns.date.width}',
-            format: '{columns.date.format}',
-            // editor: '{columns.name.editor}',
+        }, {
+            dataIndex: 'name',
+            bind: {
+                text: '{columns.name.text}',
+                width: '{columns.name.width}',
+                // editor: '{columns.name.editor}',
+            },
+        }, {
+            dataIndex: 'title',
+            bind: {
+                text: '{columns.name.text}',
+                width: '{columns.name.width}',
+                // editor: '{columns.name.editor}',
+            },
+            //editor: 'textfield'
+        }, {
+            dataIndex: 'description',
+            bind: {
+                text: '{columns.description.text}',
+                width: '{columns.description.width}',
+                flex: '{columns.description.flex}'
+                // editor: '{columns.name.editor}',
+            },
+            // editor: 'textfield'
+        }, {
+            dataIndex: 'date',
+            xtype: 'datecolumn',
+            bind: {
+                text: '{columns.date.text}',
+                width: '{columns.date.width}',
+                format: '{columns.date.format}',
+                // editor: '{columns.name.editor}',
+            }
+        }],
+        defaults: {
+            filter: {
+                type: 'string'
+            }
         }
-    }],
+    },
 
     listeners: {
         select: 'onGridRowSelect'

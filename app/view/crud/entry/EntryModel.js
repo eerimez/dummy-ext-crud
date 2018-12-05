@@ -65,7 +65,8 @@ Ext.define('C.view.crud.entry.EntryModel', {
     stores: {
         entries: {
             model: 'Entry',
-            autoLoad: true
+            autoLoad: true,
+            remoteFilter: true
         }
     }
 
