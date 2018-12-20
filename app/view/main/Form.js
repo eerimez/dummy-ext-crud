@@ -11,7 +11,6 @@ Ext.define('C.view.main.Form', {
         currentEntry: null
     },
     bind:{
-        //title:'{formTitle}',
         currentEntry:'{currentEntry}'
     },
     defaults: {
@@ -20,14 +19,13 @@ Ext.define('C.view.main.Form', {
         msgTarget: 'under'
     },
     items: [{
-        fieldLabel: 'Id',
         name: 'id',
         xtype: 'displayfield',
         bind: {
+            fieldLabel: '{fields.id.fieldLabel}',
             value: '{currentEntry.id}'
         }
     }, {
-        //fieldLabel: 'Name',
         name: 'name',
         xtype: 'textfield',
         bind: {
@@ -35,7 +33,6 @@ Ext.define('C.view.main.Form', {
             value: '{currentEntry.name}'
         }
     }, {
-        fieldLabel: 'Title',
         name: 'title',
         xtype: 'textfield',
         bind: {
@@ -43,28 +40,32 @@ Ext.define('C.view.main.Form', {
             value: '{currentEntry.title}'
         }
     }, {
-        fieldLabel: 'Description',
         name: 'description',
         xtype: 'textareafield',
         bind: {
+            fieldLabel: '{fields.description.fieldLabel}',
             value: '{currentEntry.description}'
         },
         flex: 1
     }, {
-        fieldLabel: 'Date',
         name: 'date',
         xtype: 'datefield',
         format: 'Y-m-d',
         bind: {
+            fieldLabel: '{fields.date.fieldLabel}',
             value: '{currentEntry.date}'
         }
     }],
     buttons: [{
-        text: 'Save',
+        bind: {
+            text: '{form.saveBtnText}'
+        },
         action: 'save',
         handler:'onFormBtnClick'
     }, {
-        text: 'Cancel',
+        bind: {
+            text: '{form.cancelBtnText}'
+        },
         action: 'cancel',
         handler:'onFormBtnClick'
     }]

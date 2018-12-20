@@ -4,6 +4,7 @@ Ext.define('C.view.main.Main', {
 
     requires: [
         'Ext.plugin.Viewport',
+        'Ext.grid.*',
 
         'C.view.main.Grid',
         'C.view.main.Form',
@@ -31,7 +32,7 @@ Ext.define('C.view.main.Main', {
             xtype: 'container',
             cls: 'app-header',
             height: 50,
-            bind: '{name}'
+            bind: '{grid.name}'
         }, {
             region: 'center',
             xtype: 'maingrid',
