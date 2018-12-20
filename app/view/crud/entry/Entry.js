@@ -1,18 +1,8 @@
-Ext.define('C.view.main.Main', {
+Ext.define('C.view.crud.entry.Entry', {
     extend: 'Ext.Container',
-    xtype: 'mainview',
-
-    requires: [
-        'Ext.plugin.Viewport',
-        'Ext.grid.*',
-
-        'C.view.main.Grid',
-        'C.view.main.Form',
-        'C.view.main.MainModel',
-        'C.view.main.MainController'
-    ],
-    controller: 'main',
-    viewModel: 'main',
+    alias: 'widget.crud-entry',
+    controller: 'crud-entry',
+    viewModel: 'crud-entry',
     layout: 'fit',
     items: [
         {
@@ -21,7 +11,7 @@ Ext.define('C.view.main.Main', {
                 title: '{form.formTitle}'
             },
             items: [{
-                xtype: 'mainform'
+                xtype: 'crud-entry-form'
             }]
         },
         {
@@ -35,7 +25,7 @@ Ext.define('C.view.main.Main', {
             bind: '{grid.name}'
         }, {
             region: 'center',
-            xtype: 'maingrid',
+            xtype: 'crud-entry-grid',
             margin: '5 0 5 5'
         }]
     }

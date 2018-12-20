@@ -1,6 +1,6 @@
-Ext.define('C.view.main.Form', {
+Ext.define('C.view.crud.entry.Form', {
     extend: 'Ext.form.Panel',
-    xtype: 'mainform',
+    alias: 'widget.crud-entry-form',
     autoScroll: true,
     layout: {
         type: 'vbox',
