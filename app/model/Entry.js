@@ -32,6 +32,6 @@ Ext.define('C.model.Entry', {
             name: 'date',
             type: 'date'
         }
-
     ]
+    //Jhon... you can also set the proxy directly here in the Model
 });
