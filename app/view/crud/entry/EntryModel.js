@@ -66,24 +66,7 @@ Ext.define('C.view.crud.entry.EntryModel', {
         entries: {
             model: 'Entry',
             autoLoad: true,
-            proxy: {
-                type: 'ajax',
-                url: '/resources/entries.json',
-                /*
-                 * JOHN, for example:
-                 * Instead of using the url, you can define a complete CRUD route using api:
-                 */
-                // api: {
-                //     create: '/controller/new',
-                //     read: '/controller/load',
-                //     update: '/controller/update',
-                //     destro: '/controller/destroy_action'
-                // },
-                reader: {
-                    type: 'json',
-                    rootProperty: 'data'
-                }
-            }
+            remoteFilter: true
         }
     }
 
